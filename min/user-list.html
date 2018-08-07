@@ -16,7 +16,9 @@
       <div class="row">
         <div class="col-md-6">
           <h4>User List Component</h4>
-          <user-list></user-list>
+          <ul class="list-group">
+            <user-list></user-list>
+          </ul>
         </div>
       </div>
     </div>
@@ -24,61 +26,65 @@
 
   <!-- User List -->
   <template id="user-list">
-    <ul class="list-group">
-      <li v-for="user in loadUsers" :key="user.id" class="list-group-item list-group-item-action">
+    <div>
+      <li v-for="user in usersContainer" :key="user.id" class="list-group-item list-group-item-action">
         {{ user.name }}
       </li>
-    </ul>
+    </div>
   </template>
 
   <!-- Vue Js -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
   <script>
+
+    var componentUsers = {
+      template: '#user-list',
+      data: function() {
+        return {
+          users: [],
+          userslist: [
+            {
+              name: 'Trina Guzman',
+              id: 0
+            },
+            {
+              name: 'Wood Mayo',
+              id: 1
+            },
+            {
+              name: 'Holmes Morton',
+              id: 2
+            },
+            {
+              name: 'Madden Ashley',
+              id: 3
+            },
+            {
+              name: 'Shannon Jacobs',
+              id: 4
+            }
+          ]
+        }
+      },
+      computed: {
+        usersContainer: function() {
+          return this.users = this.userslist
+        }
+      },
+      watch: {
+        users: {
+          handler: function () {
+            console.log('Данные загрузились:', this.users)
+          }
+        },
+      }
+    }
+
     new Vue ({
       el: '#app',
       components: {
-        'user-list': {
-          template: '#user-list',
-          data: function() {
-            return {
-              users: []
-            }
-          },
-          computed: {
-            loadUsers: function() {
-              return this.users = [
-                {
-                  name: 'Trina Guzman',
-                  id: 0
-                },
-                {
-                  name: 'Wood Mayo',
-                  id: 1
-                },
-                {
-                  name: 'Holmes Morton',
-                  id: 2
-                },
-                {
-                  name: 'Madden Ashley',
-                  id: 3
-                },
-                {
-                  name: 'Shannon Jacobs',
-                  id: 4
-                },
-              ]
-            }
-          },
-          watch: {
-            users: {
-              handler: function () {
-                console.log('Данные загрузились:', this.users)
-              }
-            },
-          }
-        }
+        'user-list': componentUsers
       }
     })
   </script>
