@@ -17,7 +17,7 @@
         <div class="col-md-6">
           <h4>User List Component</h4>
           <ul class="list-group">
-            <user-list></user-list>
+            <user-list :users="users"></user-list>
           </ul>
         </div>
       </div>
@@ -27,7 +27,7 @@
   <!-- User List -->
   <template id="user-list">
     <div>
-      <li v-for="user in usersContainer" :key="user.id" class="list-group-item list-group-item-action">
+      <li v-for="user in users" :key="user.id" class="list-group-item list-group-item-action">
         {{ user.name }}
       </li>
     </div>
@@ -40,10 +40,24 @@
 
     var componentUsers = {
       template: '#user-list',
+      props: {
+        users: {
+          type: Array,
+          required: true
+        }
+      }
+    }
+
+    new Vue ({
+      el: '#app',
       data: function() {
         return {
-          users: [],
-          userslist: [
+          users: []
+        }
+      },
+      methods: {
+        loadUsers: function() {
+          this.users = [
             {
               name: 'Trina Guzman',
               id: 0
@@ -67,22 +81,16 @@
           ]
         }
       },
-      computed: {
-        usersContainer: function() {
-          return this.users = this.userslist
-        }
+      mounted() {
+        this.loadUsers()
       },
       watch: {
         users: {
           handler: function () {
             console.log('Данные загрузились:', this.users)
           }
-        },
-      }
-    }
-
-    new Vue ({
-      el: '#app',
+        }
+      },
       components: {
         'user-list': componentUsers
       }
