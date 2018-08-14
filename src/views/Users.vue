@@ -43,6 +43,10 @@ export default {
   computed: {
     restUrl() {
       return `http://localhost:3000/users`
+    },
+
+    total() {
+      return this.users.length
     }
   },
   mounted() {
