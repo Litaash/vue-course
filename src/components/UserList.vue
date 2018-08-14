@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-hover">
+  <table class="table table-hover table-striped">
     <thead>
       <tr>
         <th>#</th>
@@ -14,7 +14,11 @@
     </thead>
     <tbody>
       <tr v-for="item in users" :key="item.id">
-        <td># {{ item.id }}</td>
+        <td>
+          <router-link :to="'/edit/' + item.id">
+            # {{ item.id }}
+          </router-link>
+        </td>
         <td>{{ item.firstName }}</td>
         <td>{{ item.lastName }}</td>
         <td>{{ item.isActive }}</td>
@@ -24,13 +28,13 @@
         <td>{{ item.registered }}</td>
       </tr>
     </tbody>
-    <tfoot>
+    <!-- <tfoot>
       <tr>
         <th colspan="8">
           Всего пользователей: {{ total }}
         </th>
       </tr>
-    </tfoot>
+    </tfoot> -->
   </table>
 </template>
 
