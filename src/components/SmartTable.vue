@@ -9,15 +9,26 @@
     <div v-else>
       <div class="content__header d-flex justify-content-between mb-3">
         <div class="block">
-          <p><b>Пользователей в базе - {{ total }}</b></p>
+          <p><b>Пользователей в базе –– {{ total }}</b></p>
         </div>
         <div class="block">
           <button class="btn btn-primary" @click="loadData">Обновить таблицу</button>
         </div>
       </div>
-      <select-line v-model.number="rowsPerPage" :rowsPerPage="rowsPerPage" />
-      <user-list :selectedPage="selectedPage" :rowsPerPage="rowsPerPage" :users="users" />
-      <pagination v-model.number="selectedPage" :per-page="rowsPerPage" :total="totalRows" />
+      <select-line
+        v-model.number="rowsPerPage"
+        :rowsPerPage="rowsPerPage" 
+      />
+      <user-list
+        :selectedPage="selectedPage"
+        :rowsPerPage="rowsPerPage"
+        :users="users"
+      />
+      <pagination
+        v-model.number="selectedPage"
+        :per-page="rowsPerPage"
+        :total="totalRows"
+      />
     </div>
   </div>
 </template>

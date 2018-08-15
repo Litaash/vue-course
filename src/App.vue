@@ -27,7 +27,11 @@
     </nav>
 
     <main role="main" class="container">
-      <router-view/>
+      <div class="row">
+        <div class="col-12">
+          <router-view/>
+        </div>
+      </div>
     </main>
   </div>
 </template>

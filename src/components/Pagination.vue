@@ -2,7 +2,7 @@
   <div class="pagination-wrapper">
     <nav aria-label="Page navigation example">
       <div class="mb-3">
-        <b>Выбрана страница: 1</b>
+        <b>Текущая страница: {{ value }}</b>
       </div>
       <ul class="pagination">
         <li class="page-item" :class="{ disabled: value === 1 }">
