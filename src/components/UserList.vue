@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in users" :key="item.id">
+      <tr v-for="item in filteredRows" :key="item.id">
         <td>
           <router-link :to="'/edit/' + item.id">
             # {{ item.id }}
@@ -28,22 +28,39 @@
         <td>{{ item.registered }}</td>
       </tr>
     </tbody>
-    <!-- <tfoot>
-      <tr>
-        <th colspan="8">
-          Всего пользователей: {{ total }}
-        </th>
-      </tr>
-    </tfoot> -->
   </table>
 </template>
 
 <script>
 export default {
+  name: 'UserList',
   props: {
     users: {
       type: Array,
       required: true
+    },
+    rowsPerPage: {
+      type: Number,
+      required: true
+    },
+    selectedPage: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    filteredRows() {
+      return this.users.filter((item, index) => {
+        const startIndex = (this.selectedPage - 1) * this.rowsPerPage
+        const finalIndex = startIndex + this.rowsPerPage
+        return startIndex <= index && index < finalIndex
+      })
+    }
+  },
+  watch: {
+    // При изменении количества элементов на страницу
+    rowsPerPage() {
+      this.selectedPage = 1
     }
   }
 }

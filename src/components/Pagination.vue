@@ -5,19 +5,19 @@
         <b>Выбрана страница: 1</b>
       </div>
       <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
+        <li class="page-item" :class="{ disabled: value === 1 }">
+          <a class="page-link" href="#" aria-label="Previous" @click.prevent="prevPage">
             <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
           </a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
+        <li class="page-item" v-for="item in maxPages" :key="item" :class="{ active: value === item }">
+          <a class="page-link" href="#" @click.prevent="selectPage(item)">
+            {{ item }}
+          </a>
+        </li>
+        <li class="page-item" :class="{ disabled: value === maxPages }">
+          <a class="page-link" href="#" aria-label="Next" @click.prevent="nextPage">
             <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
           </a>
         </li>
       </ul>
@@ -27,7 +27,50 @@
 
 <script>
 export default {
-  name: 'Pagination'
+  name: 'Pagination',
+  props: {
+    // Выбранная страница
+    value: {
+      type: Number,
+      required: true
+    },
+    // Количество строк на страницу
+    perPage: {
+      type: Number,
+      required: true
+    },
+    // Общее количество строк в таблице
+    total: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    // Максимальное количество страниц
+    maxPages() {
+      return Math.ceil(this.total / this.perPage)
+    }
+  },
+  methods: {
+    // Предыдущая страница
+    prevPage() {
+      const pageNum = this.value - 1
+      if (pageNum > 0) {
+        this.selectPage(pageNum)
+      }
+    },
+    // Следующая страница
+    nextPage() {
+      const pageNum = this.value + 1
+      if (pageNum <= this.maxPages) {
+        this.selectPage(pageNum)
+      }
+    },
+    // Выбор новой страницы
+    selectPage(page) {
+      this.$emit('input', page)
+    }
+  }
 }
 </script>
 

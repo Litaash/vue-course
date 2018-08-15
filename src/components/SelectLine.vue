@@ -1,20 +1,35 @@
 <template>
   <div class="input-group mb-3 d-flex flex-column">
-    <select class="custom-select w-25">
-      <option selected>Choose...</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
+    <select class="custom-select w-25" :value="value" @input="changed">
+      <option v-for="item in list" :key="item" :value="item">
+        {{ item }}
+      </option>
     </select>
-    <div class="mt-3">Выбрано элементов на страницу: <b>5</b></div>
+    <div class="form-control-static mt-3">Выбрано элементов на страницу <b>{{ rowsPerPage }}</b></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SelectLine'
+  name: 'SelectLine',
+  props: {
+    value: {
+      type: Number,
+      required: true
+    },
+    rowsPerPage: {
+      type: Number,
+      required: true
+    }
+  },
+  data: () => ({
+    list: [2, 5, 10]
+  }),
+  methods: {
+    changed(event) {
+      this.$emit('input', event.target.value)
+    }
+  }
 }
 </script>
 
