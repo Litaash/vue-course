@@ -19,11 +19,13 @@
         v-model.number="rowsPerPage"
         :rowsPerPage="rowsPerPage" 
       />
-      <user-list
-        :selectedPage="selectedPage"
-        :rowsPerPage="rowsPerPage"
-        :users="users"
-      />
+      <slot name="component">
+        <user-list
+          :selectedPage="selectedPage"
+          :rowsPerPage="rowsPerPage"
+          :users="users"
+        />
+      </slot>
       <pagination
         v-model.number="selectedPage"
         :per-page="rowsPerPage"

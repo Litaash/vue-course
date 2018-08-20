@@ -7,7 +7,7 @@
     <template v-else>
       <user-form v-model="user" />
 
-      <button type="button" class="btn btn-primary" @click="save">
+      <button type="button" class="btn btn-success" @click="save">
         Сохранить
       </button>
       

@@ -4,7 +4,7 @@
       "id": 0,
       "isActive": true,
       "balance": "$3,510.83",
-      "picture": "http://placehold.it/128x128",
+      "picture": "",
       "age": 36,
       "accessLevel": "guest",
       "firstName": "Sanders",
@@ -13,14 +13,14 @@
       "email": "sanders.holland@oulu.name",
       "phone": "+38 (066) 438 45 55",
       "address": "908 Dikeman Street, Caspar, Mississippi, 6307",
-      "about": "Qui est esse id exercitation consectetur qui fugiat duis excepteur commodo aliquip laboris deserunt esse. Aliqua laborum ut laboris est fugiat nisi est sint aute aliqua sit. Sit est labore anim ipsum commodo cupidatat laboris consectetur do exercitation sunt sunt nisi. Aliqua non aliquip esse commodo nulla qui proident tempor et cupidatat. Esse aliquip id in aute elit ea. Ut non ullamco proident sint anim sunt et. Deserunt incididunt incididunt id fugiat cupidatat.",
-      "registered": "08.04.2018"
+      "about": "<p>Qui est esse id exercitation consectetur qui fugiat duis excepteur commodo aliquip laboris deserunt esse. Aliqua laborum ut laboris est fugiat nisi est sint aute aliqua sit. Sit est labore anim ipsum commodo cupidatat laboris consectetur do exercitation sunt sunt nisi. Aliqua non aliquip esse commodo nulla qui proident tempor et cupidatat. Esse aliquip id in aute elit ea. Ut non ullamco proident sint anim sunt et. Deserunt incididunt incididunt id fugiat cupidatat.</p>",
+      "registered": "14.05.2018"
     },
     {
       "id": 1,
       "isActive": true,
       "balance": "$1,363.02",
-      "picture": "http://placehold.it/128x128",
+      "picture": "",
       "age": 31,
       "accessLevel": "guest",
       "firstName": "Horne",
@@ -34,9 +34,9 @@
     },
     {
       "id": 2,
-      "isActive": true,
+      "isActive": false,
       "balance": "$1,253.22",
-      "picture": "http://placehold.it/128x128",
+      "picture": "",
       "age": 21,
       "accessLevel": "admin",
       "firstName": "Joy",
@@ -50,9 +50,9 @@
     },
     {
       "id": 3,
-      "isActive": true,
+      "isActive": false,
       "balance": "$2,249.55",
-      "picture": "http://placehold.it/128x128",
+      "picture": "",
       "age": 29,
       "accessLevel": "user",
       "firstName": "Nadine",
@@ -66,9 +66,9 @@
     },
     {
       "id": 4,
-      "isActive": true,
+      "isActive": false,
       "balance": "$3,853.12",
-      "picture": "http://placehold.it/128x128",
+      "picture": "",
       "age": 29,
       "accessLevel": "user",
       "firstName": "Cherry",
@@ -82,9 +82,9 @@
     },
     {
       "id": 5,
-      "isActive": true,
+      "isActive": false,
       "balance": "$1,433.12",
-      "picture": "http://placehold.it/128x128",
+      "picture": "",
       "age": 39,
       "accessLevel": "user",
       "firstName": "Sergey",
@@ -98,7 +98,7 @@
     },
     {
       "id": 6,
-      "isActive": true,
+      "isActive": false,
       "balance": "$1,253.22",
       "picture": "",
       "age": 24,
@@ -114,7 +114,7 @@
     },
     {
       "id": 7,
-      "isActive": true,
+      "isActive": false,
       "balance": "$2,253.22",
       "picture": "",
       "age": 22,
@@ -130,7 +130,7 @@
     },
     {
       "id": 8,
-      "isActive": true,
+      "isActive": false,
       "balance": "$1,223.32",
       "picture": "",
       "age": 0,
@@ -146,7 +146,7 @@
     },
     {
       "id": 9,
-      "isActive": true,
+      "isActive": false,
       "balance": "$2,398.62",
       "picture": "",
       "age": 0,
@@ -162,7 +162,7 @@
     },
     {
       "id": 10,
-      "isActive": true,
+      "isActive": false,
       "balance": "$4,253.22",
       "picture": "",
       "age": 0,
@@ -207,6 +207,38 @@
       "address": "Chernihiv",
       "about": "",
       "registered": "12.02.2015"
+    },
+    {
+      "id": 14,
+      "isActive": true,
+      "balance": "$9444.33",
+      "picture": "https://i.imgur.com/ebc68Sr.jpg",
+      "age": "23",
+      "accessLevel": "user",
+      "firstName": "Kun",
+      "lastName": "Aguero",
+      "company": "TEST",
+      "email": "aguero@example.com",
+      "phone": "+34 (342) 322 34 34",
+      "address": "TEST",
+      "about": "<p>HOHOHOOO!!</p>",
+      "registered": "23.08.2018"
+    },
+    {
+      "id": 15,
+      "isActive": true,
+      "balance": "$3433.33",
+      "picture": "",
+      "age": "23",
+      "accessLevel": "user",
+      "firstName": "Enner",
+      "lastName": "Banega",
+      "company": "test",
+      "email": "bagena@example.com",
+      "phone": "+24 (234) 234 23 44",
+      "address": "etst",
+      "about": "<p>Ho hooo hello</p>",
+      "registered": "20.08.2018"
     }
   ]
 }

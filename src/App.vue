@@ -14,12 +14,17 @@
           </router-link>
           <router-link class="nav-item" tag="li" to="/users">
             <a href="" class="nav-link">
-              Список пользователей
+              Список
             </a>
           </router-link>
           <router-link class="nav-item" tag="li" to="/add">
             <a href="" class="nav-link">
-              Добавление пользователя
+              Добавить
+            </a>
+          </router-link>
+          <router-link class="nav-item" tag="li" to="/phone">
+            <a href="" class="nav-link">
+              Cправочник
             </a>
           </router-link>
         </ul>

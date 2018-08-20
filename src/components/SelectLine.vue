@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group mb-3 d-flex flex-column">
+  <div class="input-group mb-3 mt-3 d-flex flex-column">
     <select class="custom-select w-25" :value="value" @input="changed">
       <option v-for="item in list" :key="item" :value="item">
         {{ item }}

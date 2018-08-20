@@ -1,9 +1,20 @@
 <template>
   <div>
     <div class="wrapper">
-      <h2 class="mb-3">Список пользователей</h2>
+      <h2 class="mb-3">Список Телефонов</h2>
       <div class="content">
-        <user-list />
+        <user-list url="/users">
+          <tr slot="header">
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+          </tr>
+          <template slot="row" slot-scope="props">
+            <td>{{ props.firstName }}</td>
+            <td>{{ props.lastName }}</td>
+            <td>{{ props.phone }}</td>
+          </template>
+        </user-list>
       </div>
     </div>
   </div>
@@ -11,6 +22,7 @@
 
 <script>
 export default {
+  name: 'Phone',
   components: {
     UserList: () => import('@/components/UserList.vue')
   }

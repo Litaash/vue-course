@@ -21,7 +21,7 @@ import axios from 'axios'
 
 const addUser = {
   id: 0,
-  isActive: true,
+  isActive: false,
   balance: '',
   picture: '',
   age: 0,
